@@ -1,0 +1,373 @@
+/* ==========================================
+   ОСНОВНЫЕ ПЕРЕМЕННЫЕ И СБРОС
+   ========================================== */
+:root {
+    --primary-color: #4CAF50; /* Зеленый (Minecraft grass) */
+    --secondary-color: #2196F3; /* Синий (Вода/Магия) */
+    --dark-bg: #1a1a1a;
+    --darker-bg: #111111;
+    --card-bg: #2a2a2a;
+    --text-main: #ffffff;
+    --text-muted: #b0b0b0;
+    --danger-color: #f44336; /* Красный (Анархия) */
+    --gold-color: #FFD700; /* Золото (Донат) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================
+   ШАПКА САЙТА (HERO)
+   ========================================== */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/bg.jpg') center/cover no-repeat;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0px #000, 4px 4px 0px var(--primary-color);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* Блок с IP */
+.ip-box {
+    background: rgba(0,0,0,0.5);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ip-box.bedrock {
+    border-color: var(--secondary-color);
+}
+
+.ip-box span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.ip-box button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    font-family: 'Courier New', monospace;
+}
+
+.ip-box.bedrock button {
+    background: var(--secondary-color);
+}
+
+.ip-box button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* ==========================================
+   НАВИГАЦИЯ
+   ========================================== */
+.modes-nav {
+    background: var(--darker-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.modes-nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modes-nav li a {
+    display: block;
+    padding: 15px 25px;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+}
+
+.modes-nav li a:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ==========================================
+   СЕКЦИИ КОНТЕНТА
+   ========================================== */
+section {
+    padding: 60px 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+/* Карточки фич */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid #333;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.feature-card .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Режимы игры */
+.mode-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mode-item {
+    background: var(--card-bg);
+    padding: 25px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.mode-item.danger { border-left-color: var(--danger-color); }
+.mode-item.fun { border-left-color: var(--gold-color); }
+.mode-item.sky { border-left-color: var(--secondary-color); }
+
+.mode-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Донат секция */
+.donate-section {
+    background: var(--darker-bg);
+}
+
+.eula-note {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: -20px auto 40px auto;
+    font-style: italic;
+    border: 1px dashed #555;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.price-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.price-card:hover {
+    border-color: var(--gold-color);
+}
+
+.price-card.popular {
+    border-color: var(--gold-color);
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold-color);
+    color: black;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.price-card h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.price-card ul {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.price-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+}
+
+.price-card ul li::before {
+    content: "✔";
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.btn-buy {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-buy:hover {
+    background: #45a049;
+}
+
+.dragon .price {
+    color: var(--danger-color);
+}
+
+/* Моды */
+.mods-section ol {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+    list-style-type: decimal;
+}
+
+.mods-section li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.mods-section code {
+    background: #333;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--gold-color);
+}
+
+/* ==========================================
+   ПОДВАЛ
+   ========================================== */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 30px 0;
+    color: var(--text-muted);
+    border-top: 1px solid #333;
+}
+
+/* ==========================================
+   АДАПТИВНОСТЬ (ДЛЯ ТЕЛЕФОНОВ)
+   ========================================== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .modes-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .price-card.popular {
+        transform: scale(1);
+    }
+}
