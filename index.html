@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mainkraft Server | Выживание, Мини-игры, Анархия</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="glitch" data-text="MAINKRAFT SERVER">MAINKRAFT SERVER</h1>
+            <p class="subtitle">Лучший сервер для игры с ПК и Телефонов!</p>
+            
+            <!-- Блок с IP адресом -->
+            <div class="ip-box">
+                <span>IP-адрес для Java (ПК):</span>
+                <button id="copy-java" onclick="copyToClipboard('play.mainkraft.ru', 'copy-java')">play.mainkraft.ru</button>
+            </div>
+            <div class="ip-box bedrock">
+                <span>IP-адрес для Bedrock (Телефоны):</span>
+                <button id="copy-bedrock" onclick="copyToClipboard('play.mainkraft.ru', 'copy-bedrock')">play.mainkraft.ru : 19132</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация по режимам -->
+    <nav class="modes-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#survival">Выживание</a></li>
+                <li><a href="#anarchy">Анархия</a></li>
+                <li><a href="#minigames">Мини-игры</a></li>
+                <li><a href="#skyblock">SkyBlock</a></li>
+                <li><a href="#donate">Донат</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="container">
+        
+        <!-- О сервере -->
+        <section class="about">
+            <h2>Почему выбирают нас?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">📱</div>
+                    <h3>Кроссплей</h3>
+                    <p>Играй с компьютера и телефона на одном сервере! Друзья с Android/iOS могут играть вместе с тобой.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⛏️</div>
+                    <h3>Авто-шахта</h3>
+                    <p>Бесконечные ресурсы! Шахта обновляется каждые 5 минут. Шанс найти Секретную руду — 5%!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💰</div>
+                    <h3>Двойная Экономика</h3>
+                    <p>Зарабатывай Монеты играя, а Токены получай раз в неделю за 1 час игры. Покупай крутые вещи!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚔️</div>
+                    <h3>Кастомные Предметы</h3>
+                    <p>Меч Бога, Топор Дьявола, уникальные зачарования до 25 уровня и эффект отравления при ударе!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Режимы игры -->
+        <section id="survival" class="game-mode">
+            <h2>Режимы игры</h2>
+            <div class="mode-list">
+                <div class="mode-item">
+                    <h3>🌲 Выживание</h3>
+                    <p>Классическое выживание с приватами, экономикой, питомцами (KidPets) и квестами. Построй свою империю!</p>
+                </div>
+                <div class="mode-item danger">
+                    <h3>💀 Анархия и Гриферский</h3>
+                    <p>Никаких правил! Ломай чужие базы, используй /rtp для случайной телепортации. Выживает сильнейший.</p>
+                </div>
+                <div class="mode-item fun">
+                    <h3>🎮 Мини-игры</h3>
+                    <p>BedWars, SkyWars, Сплиф (Spleef), Паркур с таблицами лидеров и Царь Горы. Выбирай в меню при входе!</p>
+                </div>
+                <div class="mode-item sky">
+                    <h3>🏝️ SkyBlock</h3>
+                    <p>Начни на маленьком острове в пустоте и построй огромный мир. Прокачивай свой остров!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Донат (По EULA) -->
+        <section id="donate" class="donate-section">
+            <h2>Магазин Рангов (Донат)</h2>
+            <p class="eula-note">Все покупки строго по правилам Mojang EULA. Мы не продаём игровое преимущество (Pay-to-Win), только косметику и удобства!</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Боец</h3>
+                    <div class="price">50 ₽</div>
+                    <ul>
+                        <li>Цветной префикс в чате</li>
+                        <li>+2 точки дома (/sethome)</li>
+                        <li>Доступ к /hat</li>
+                    </ul>
+                    <a href="#" class="btn-buy">Купить</a>
+                </div>
+                
+                <div class="price-card popular">
+                    <div class="badge">ХИТ</div>
+                    <h3>Шахтёр</h3>
+                    <div class="price">250 ₽</div>
+                    <ul>
+                        <li>Всё от "Боец"</li>
+                        <li>Увеличенный рюкзак</li>
+                        <li>Команда /feed (раз в 10 мин)</li>
+                        <li>Доступ к авто-шахте VIP</li>
+                    </ul>
+                    <a href="#" class="btn-buy">Купить</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>ПвПшер</h3>
+                    <div class="price">1000 ₽</div>
+                    <ul>
+                        <li>Всё от "Шахтёр"</li>
+                        <li>Частицы при убийстве</li>
+                        <li>Закрытая PvP-арена</li>
+                        <li>Приоритетный вход</li>
+                    </ul>
+                    <a href="#" class="btn-buy">Купить</a>
+                </div>
+
+                <div class="price-card dragon">
+                    <h3>Драгон</h3>
+                    <div class="price">5000 ₽</div>
+                    <ul>
+                        <li>Всё от "ПвПшер"</li>
+                        <li>Эксклюзивный питомец-дракон</li>
+                        <li>Кастомный скорборд</li>
+                        <li>Максимальный приоритет</li>
+                    </ul>
+                    <a href="#" class="btn-buy">Купить</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Инструкция по модам -->
+        <section class="mods-section">
+            <h2>Как сделать игру красивее? (Шейдеры)</h2>
+            <p>Для игроков с ПК мы рекомендуем установить сборку модов для потрясающей графики:</p>
+            <ol>
+                <li>Скачай <strong>Fabric Loader</strong> и установи его.</li>
+                <li>Скачай моды: <strong>Sodium</strong> (FPS), <strong>Iris Shaders</strong> (Шейдеры), <strong>Lithium</strong>.</li>
+                <li>Скачай шейдер-пак <strong>Complementary Rebirth</strong> или <strong>BSL</strong>.</li>
+                <li>Закинь шейдер в папку <code>shaderpacks</code> и выбери его в настройках видео.</li>
+            </ol>
+            <p><em>Игрокам с телефонов (Bedrock) ничего устанавливать не нужно, просто заходи через Geyser!</em></p>
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mainkraft Server. Разработано Евгением.</p>
+            <p>Не является официальным продуктом Mojang/Microsoft.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
